@@ -1,5 +1,4 @@
 package com.company;
 
-public class Colors {
-
+public class RGB {
 }
