@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("I will convert your colors! Which format will you use?\n" +
-                "(A) Hexadecimal\n(B) RGB\n(C) HTML";
+                "(A) Hexadecimal\n(B) RGB\n(C) HTML");
         boolean done = true;
         while (done) {
             String ans = input.nextLine();
