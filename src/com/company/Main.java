@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("I will convert your colors! Which format will you use?\n" +
-                "(A) Hexadecimal\n(B) RGB\n(C) HTML");
+                "(A) Hexadecimal\n(B) RGB");
         boolean done = true;
         while (done) {
             String ans = input.nextLine();
@@ -16,7 +16,8 @@ public class Main {
                 String orig;
                 while (true) {
                     orig = input.nextLine();
-                    if (Hexadecimal.checker(orig))
+                    orig = orig.toUpperCase();
+                    if (toRGB.checker(orig))
                         break;
                     else if (orig.contains(" "))
                         System.out.println("Please do not use space.");
@@ -26,14 +27,14 @@ public class Main {
                 hex[0] = orig.substring(0, 2);
                 hex[1] = orig.substring(2, 4);
                 hex[2] = orig.substring(4);
-                Hexadecimal dec = new Hexadecimal(hex);
-                System.out.println("RGB: " + dec.RGB[0] + ", " + dec.RGB[1] + ", " +
-                        dec.RGB[2] + "\nHTML: " + dec.HTML);
+                toRGB dec = new toRGB(hex);
+                int count = 0;
+                while (count < dec.RGB.length) {
+                    System.out.print(dec.RGB[count] + ", ");
+                    count++;
+                }
             }
             else if (ans.equalsIgnoreCase("B")) {
-                done = false;
-            }
-            else if (ans.equalsIgnoreCase("C")) {
                 done = false;
             }
             else
